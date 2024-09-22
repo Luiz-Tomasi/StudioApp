@@ -20,6 +20,7 @@ class login_page extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50), // empty space
               //logo
@@ -109,9 +110,25 @@ class login_page extends StatelessWidget {
                   const SizedBox(width: 25),
                   SquareTile(imagePath: "../assets/images/appleIcon.png"),
                 ],
-              )
+              ),
 
               // not a member? register now
+              const SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Não é cadastrado?",
+                    style: TextStyle(color: Colors.grey.shade700),
+                  ),
+                  const SizedBox(width: 4),
+                  const Text('Cadastre agora',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ))
+                ],
+              )
             ],
           ),
         ),
