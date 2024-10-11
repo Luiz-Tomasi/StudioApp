@@ -1,148 +1,125 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:studio_app/components/my_text_field.dart';
 import 'package:studio_app/components/my_button.dart';
-import 'package:studio_app/components/my_textField.dart';
 import 'package:studio_app/components/square_tile.dart';
 
-class login_page extends StatelessWidget {
-  login_page({super.key});
-
-  //text edditing controllers;
-  final usernameController = TextEditingController();
+class LoginPage extends StatelessWidget {
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final String facebookUrl = '../assets/icons/facebook-brands-solid.svg';
+  final String instagramUrl = '../assets/icons/instagram-brands-solid.svg';
+  final String whatsappUrl = '../assets/icons/whatsapp-brands-solid.svg';
 
-  // Sign user in method
-  void signUserIn() {}
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(190, 206, 180, 1),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 50), // empty space
-              //logo
-              const Icon(
-                Icons.lock,
-                size: 100,
+      backgroundColor: const Color.fromRGBO(190, 206, 180, 1),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Be, Yourself',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
-
-              // Welcome
-              const SizedBox(height: 50), // empty space
-              Text(
-                'Seja bem-vindo!',
-                style: TextStyle(
-                  color: Colors.grey.shade700,
-                  fontSize: 16,
-                ),
+            ),
+            const SizedBox(height: 20),
+            MyTextField(
+              controller: emailController,
+              hintText: 'Enter Your Email',
+              obscureText: false,
+            ),
+            const SizedBox(height: 10),
+            MyTextField(
+              controller: passwordController,
+              hintText: 'Password',
+              obscureText: true,
+            ),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/reset-password');
+              },
+              child: const Text('Forgot Password?'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'SIGN IN',
+                style: TextStyle(color: Colors.white),
               ),
-
-              Text(
-                'Estávamos com saudades de você',
-                style: TextStyle(
-                  color: Colors.grey.shade700,
-                  fontSize: 16,
-                ),
-              ),
-
-              // Username
-              const SizedBox(height: 50), // empty space
-              MyTextField(
-                controller: usernameController,
-                hintText: 'Usuário',
-                obscureText: false,
-              ),
-
-              // password
-              const SizedBox(height: 10),
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Senha',
-                obscureText: true,
-              ),
-
-              // forgot password
-              const SizedBox(height: 10), // empty space
-              Text(
-                'Esqueceu sua Senha?',
-                style: TextStyle(color: Colors.grey.shade600),
-              ),
-
-              // sign in
-              const SizedBox(height: 25),
-              MyButton(onTap: signUserIn, title: "Login"),
-              // or continue with
-              const SizedBox(height: 25),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: Divider(
-                      thickness: 0.5,
-                      color: Colors.grey.shade400,
-                    )),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(
-                        "Ou continue com",
-                        style: TextStyle(color: Colors.grey.shade700),
-                      ),
-                    ),
-                    Expanded(
-                        child: Divider(
-                      thickness: 0.5,
-                      color: Colors.grey.shade400,
-                    ))
-                  ],
-                ),
-              ),
-
-              // google /
-              const SizedBox(height: 25),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SquareTile(imagePath: "../assets/images/googleIcon.webp"),
-                  const SizedBox(width: 25),
-                  SquareTile(imagePath: "../assets/images/appleIcon.png"),
-                ],
-              ),
-
-              // not a member? register now
-              const SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Não é cadastrado?",
-                    style: TextStyle(color: Colors.grey.shade700),
+              style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.black),
+                  shape: WidgetStatePropertyAll(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                  )),
+            ),
+            MyButton(
+              title: 'SIGN IN',
+              onTap: () {
+                // Lógica para login
+              },
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // SvgPicture.network(
+                //   instagramUrl,
+                //   height: 30,
+                //   // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                // ),
+                // SvgPicture.network(
+                //   whatsappUrl,
+                //   height: 30,
+                //   // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                // ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.network(
+                    instagramUrl,
+                    height: 30,
+                    width: 30,
+                    // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
                   ),
-                  const SizedBox(width: 4),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/register");
-                    },
-                    child: Text(
-                      'Cadastre agora',
-                      style: TextStyle(
-                        color: Colors.blue, // Cor do "SIGN UP"
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.network(
+                    whatsappUrl,
+                    height: 30,
+                    width: 30,
+                    // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
                   ),
-                  // const Text('Cadastre agora',
-                  //     style: TextStyle(
-                  //       color: Colors.blue,
-                  //       fontWeight: FontWeight.bold,
-                  //     ))
-                ],
-              )
-            ],
-          ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.network(
+                    facebookUrl,
+                    height: 30,
+                    width: 30,
+                    // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                  ),
+                )
+
+                // SquareTile(
+                //     imagePath: ,
+                // SizedBox(width: 10),
+                // SquareTile(
+                //     imagePath: '../assets/icons/instagram-brands-solid.svg'),
+                // SizedBox(width: 10),
+                // SquareTile(
+                //     imagePath: '../assets/icons/whatsapp-brands-solid.svg'),
+              ],
+            ),
+          ],
         ),
       ),
     );

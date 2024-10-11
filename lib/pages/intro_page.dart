@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:studio_app/pages/login_page.dart';
-import 'package:studio_app/pages/register_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -9,7 +7,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(190, 206, 180, 1),
+      backgroundColor: const Color.fromRGBO(190, 206, 180, 1),
       body: Stack(
         children: [
           Align(
@@ -30,7 +28,8 @@ class IntroPage extends StatelessWidget {
               height: MediaQuery.of(context).size.height *
                   0.15, // 15% da altura da tela
               decoration: BoxDecoration(
-                color: Color.fromRGBO(42, 48, 54, 1), // Fundo verde escuro
+                color:
+                    const Color.fromRGBO(42, 48, 54, 1), // Fundo verde escuro
                 borderRadius:
                     BorderRadius.circular(16), // Borda com raio de 16px
               ),
@@ -44,17 +43,17 @@ class IntroPage extends StatelessWidget {
                       Navigator.pushNamed(context, "/login");
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromRGBO(
+                      backgroundColor: const Color.fromRGBO(
                           18, 150, 132, 1), // Cor do fundo do botão
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 15), // Tamanho do botão
                       shape: RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.circular(12), // Borda do botão
                       ),
                     ),
-                    child: Text(
-                      'Sign In',
+                    child: const Text(
+                      'Logar',
                       style: TextStyle(
                         color: Colors.black, // Cor do texto
                         fontSize: 22,
@@ -62,13 +61,14 @@ class IntroPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10), // Espaçamento entre o botão e o texto
+                  const SizedBox(
+                      height: 10), // Espaçamento entre o botão e o texto
                   // Texto "DON’T HAVE ACCOUNT SIGN UP"
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "DON'T HAVE ACCOUNT?",
+                      const Text(
+                        "Não possui uma conta?",
                         style: TextStyle(
                           color: Colors.white, // Cor do texto
                           fontSize: 14,
@@ -78,8 +78,8 @@ class IntroPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, "/register");
                         },
-                        child: Text(
-                          'SIGN UP',
+                        child: const Text(
+                          'Cadastre-se',
                           style: TextStyle(
                             color: Colors.white, // Cor do "SIGN UP"
                             fontWeight: FontWeight.bold,
