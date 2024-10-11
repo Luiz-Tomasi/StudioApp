@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/buy_credit_page.dart';
+import 'package:my_app/pages/calendar_page.dart';
+import 'package:my_app/pages/history_page.dart';
 import 'package:my_app/pages/intro_page.dart';
 import 'package:my_app/pages/login_page.dart';
 
@@ -16,6 +19,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) => IntroPage(),
         '/login' : (context) => login_page(),
+        '/calendar' : (context) => HomePage(),
+        '/buy' : (context) => CreditPage(),
+        '/history' : (context) => HistoryPage()
       },
     );
   }
