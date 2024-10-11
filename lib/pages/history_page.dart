@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/components/creditCard.dart';
+import 'package:studio_app/components/creditCard.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});

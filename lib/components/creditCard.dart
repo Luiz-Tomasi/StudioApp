@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/components/my_button.dart';
+import 'package:studio_app/components/my_button.dart';
 
 class CreditCard extends StatelessWidget {
   final String credits;
@@ -48,7 +48,7 @@ class CreditCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  MyButton(onTap: selectedFunc),
+                  MyButton(onTap: selectedFunc, title: 'Comprar',),
                 ],
               ),
               SizedBox(height: 5),

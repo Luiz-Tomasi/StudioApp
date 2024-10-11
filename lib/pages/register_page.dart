@@ -3,15 +3,16 @@ import 'package:studio_app/components/my_button.dart';
 import 'package:studio_app/components/my_textField.dart';
 import 'package:studio_app/components/square_tile.dart';
 
-class login_page extends StatelessWidget {
-  login_page({super.key});
+class register_page extends StatelessWidget {
+  register_page({super.key});
 
   //text edditing controllers;
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   // Sign user in method
-  void signUserIn() {}
+  void signUserUp() {}
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,6 @@ class login_page extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50), // empty space
               //logo
@@ -63,16 +63,16 @@ class login_page extends StatelessWidget {
                 obscureText: true,
               ),
 
-              // forgot password
-              const SizedBox(height: 10), // empty space
-              Text(
-                'Esqueceu sua Senha?',
-                style: TextStyle(color: Colors.grey.shade600),
+              const SizedBox(height: 10),
+              MyTextField(
+                controller: confirmPasswordController,
+                hintText: 'Confirmar senha',
+                obscureText: true,
               ),
 
-              // sign in
+              // sign up
               const SizedBox(height: 25),
-              MyButton(onTap: signUserIn, title: "Login"),
+              MyButton(onTap: signUserUp, title: "Cadastrar-se"),
               // or continue with
               const SizedBox(height: 25),
 
@@ -110,37 +110,9 @@ class login_page extends StatelessWidget {
                   const SizedBox(width: 25),
                   SquareTile(imagePath: "../assets/images/appleIcon.png"),
                 ],
-              ),
+              )
 
               // not a member? register now
-              const SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Não é cadastrado?",
-                    style: TextStyle(color: Colors.grey.shade700),
-                  ),
-                  const SizedBox(width: 4),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/register");
-                    },
-                    child: Text(
-                      'Cadastre agora',
-                      style: TextStyle(
-                        color: Colors.blue, // Cor do "SIGN UP"
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  // const Text('Cadastre agora',
-                  //     style: TextStyle(
-                  //       color: Colors.blue,
-                  //       fontWeight: FontWeight.bold,
-                  //     ))
-                ],
-              )
             ],
           ),
         ),

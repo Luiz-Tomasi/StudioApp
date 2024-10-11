@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:studio_app/components/creditCard.dart';
 
 class CreditPage extends StatelessWidget {
   @override
@@ -84,82 +85,6 @@ class CreditPage extends StatelessWidget {
         backgroundColor: Colors.greenAccent,
         onPressed: () {},
         child: Icon(Icons.add, color: Colors.black87),
-      ),
-    );
-  }
-}
-
-class CreditCard extends StatelessWidget {
-  final String credits;
-  final String price;
-  final String description;
-
-  const CreditCard({
-    Key? key,
-    required this.credits,
-    required this.price,
-    required this.description,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.greenAccent,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      padding: EdgeInsets.all(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                credits,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                price,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 5),
-              Text(
-                description,
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueAccent,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            child: Row(
-              children: [
-                Text('Comprar'),
-                SizedBox(width: 5),
-                CircleAvatar(
-                  backgroundColor: Colors.red,
-                  radius: 10,
-                  child: Text(
-                    'L',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
