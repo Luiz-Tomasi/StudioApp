@@ -3,8 +3,8 @@ import 'package:studio_app/components/my_button.dart';
 import 'package:studio_app/components/my_textField.dart';
 import 'package:studio_app/components/square_tile.dart';
 
-class register_page extends StatelessWidget {
-  register_page({super.key});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
 
   //text edditing controllers;
   final usernameController = TextEditingController();
@@ -110,8 +110,30 @@ class register_page extends StatelessWidget {
                   const SizedBox(width: 25),
                   SquareTile(imagePath: "../assets/images/appleIcon.png"),
                 ],
-              )
-
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Já é cadastrado?",
+                    style: TextStyle(color: Colors.grey.shade700),
+                  ),
+                  const SizedBox(width: 4),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/login");
+                    },
+                    child: const Text(
+                      'Logar agora',
+                      style: TextStyle(
+                        color: Colors.blue, // Cor do "SIGN UP"
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               // not a member? register now
             ],
           ),

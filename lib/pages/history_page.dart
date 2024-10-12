@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:studio_app/components/creditCard.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Para os ícones
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -28,7 +29,9 @@ class _HistoryPageState extends State<HistoryPage> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "/history");
+          },
         ),
         actions: const [
           CircleAvatar(
@@ -104,20 +107,28 @@ class _HistoryPageState extends State<HistoryPage> {
           children: [
             IconButton(
               icon: const Icon(Icons.home, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/home");
+              },
             ),
             IconButton(
               icon: const Icon(Icons.calendar_today, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/calendar");
+              },
             ),
-            const SizedBox(width: 40), // Para o espaço do botão flutuante
+            SizedBox(width: 40), // Para o espaço do botão flutuante
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.chartLine, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
             IconButton(
               icon: const Icon(Icons.notifications, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
           ],
         ),
