@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Para os ícones
 
-class HomePage extends StatelessWidget {
+class CalendarPage extends StatelessWidget {
+  const CalendarPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +13,9 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "/history");
+          },
         ),
         actions: [
           CircleAvatar(
@@ -63,7 +67,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/buy");
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.greenAccent,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -88,20 +94,28 @@ class HomePage extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.home, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/home");
+              },
             ),
             IconButton(
               icon: Icon(Icons.calendar_today, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/calendar");
+              },
             ),
             SizedBox(width: 40), // Para o espaço do botão flutuante
             IconButton(
               icon: FaIcon(FontAwesomeIcons.chartLine, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
             IconButton(
               icon: Icon(Icons.notifications, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
           ],
         ),
@@ -109,7 +123,9 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.greenAccent,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/buy");
+        },
         child: Icon(Icons.add, color: Colors.black87),
       ),
     );

@@ -12,7 +12,9 @@ class CreditPage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "/history");
+          },
         ),
         actions: [
           CircleAvatar(
@@ -62,20 +64,28 @@ class CreditPage extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.home, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/home");
+              },
             ),
             IconButton(
               icon: Icon(Icons.calendar_today, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/calendar");
+              },
             ),
             SizedBox(width: 40), // Para o espaço do botão flutuante
             IconButton(
               icon: FaIcon(FontAwesomeIcons.chartLine, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
             IconButton(
               icon: Icon(Icons.notifications, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/history");
+              },
             ),
           ],
         ),
@@ -83,7 +93,9 @@ class CreditPage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.greenAccent,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/buy");
+        },
         child: Icon(Icons.add, color: Colors.black87),
       ),
     );
