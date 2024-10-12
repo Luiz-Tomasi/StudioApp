@@ -5,6 +5,7 @@ class CreditCard extends StatelessWidget {
   final String credits;
   final String price;
   final String description;
+  final String buttonText;
 
   // Sign user in method
   void selectedFunc() {}
@@ -14,6 +15,7 @@ class CreditCard extends StatelessWidget {
     required this.credits,
     required this.price,
     required this.description,
+    required this.buttonText,
   }) : super(key: key);
 
   @override
@@ -39,8 +41,8 @@ class CreditCard extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  
                   Text(
                     price,
                     style: TextStyle(
@@ -48,7 +50,7 @@ class CreditCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  MyButton(onTap: selectedFunc, title: 'Comprar',),
+                  MyButton(onTap: selectedFunc, title: buttonText,),
                 ],
               ),
               SizedBox(height: 5),

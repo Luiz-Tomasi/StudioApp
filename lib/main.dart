@@ -4,6 +4,7 @@ import 'package:studio_app/pages/calendar_page.dart';
 import 'package:studio_app/pages/forget_password_step_1_page.dart';
 import 'package:studio_app/pages/forget_password_step_2_page.dart';
 import 'package:studio_app/pages/forget_password_step_3_page.dart';
+import 'package:studio_app/pages/class_details.dart';
 import 'package:studio_app/pages/history_page.dart';
 import 'package:studio_app/pages/home_page.dart';
 import 'package:studio_app/pages/intro_page.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/calendar': (context) => CalendarPage(),
         '/buy': (context) => CreditPage(),
-        '/history': (context) => HistoryPage()
+        '/class' : (context) => Class_Details(),
       },
     );
   }
