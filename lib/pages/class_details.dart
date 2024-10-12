@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:studio_app/components/creditCard.dart';
+import 'package:studio_app/components/personCard.dart';
 
-class HistoryPage extends StatefulWidget {
-  const HistoryPage({super.key});
+class Class_Details extends StatefulWidget {
+  const Class_Details({super.key});
 
   @override
-  _HistoryPageState createState() => _HistoryPageState();
+  _Class_DetailsState createState() => _Class_DetailsState();
 }
 
-class _HistoryPageState extends State<HistoryPage> {
+class _Class_DetailsState extends State<Class_Details> {
   int selectedTextIndex = 0; // Índice do texto selecionado
 
   // Método para atualizar o texto selecionado
@@ -49,49 +50,9 @@ class _HistoryPageState extends State<HistoryPage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            // Container com bordas arredondadas que envolve os textos
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Colors.greenAccent,
-                  width: 2,
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildSelectableText("Concluidas", 0),
-                  const Text(
-                    "|",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  _buildSelectableText("Hoje", 1),
-                  const Text(
-                    "|",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  _buildSelectableText("Agendadas", 2),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20), // Espaço entre o contêiner e os cards
-            // Primeiro card
-            CreditCard(
-              credits: 'Concluida',
-              price: '12 Créditos',
-              description: 'Aula concluida no dia 01/01/2024',
-              buttonText: "Analisar",
-            ),
-            const SizedBox(height: 15), // Espaço entre os cards
-            // Segundo card
-            CreditCard(
-              credits: 'Concluida',
-              price: '12 Créditos',
-              description: 'Aula concluida no dia 02/01/2024',
-              buttonText: "Analisar",
-            ),
+            PersonCard(name: "Professor", buttonText: "detalhes"),
+            SizedBox(height: 20),
+            PersonCard(name: "Aluno", buttonText: "detalhes"),
           ],
         ),
       ),

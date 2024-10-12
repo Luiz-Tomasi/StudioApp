@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:studio_app/pages/login_page.dart';
-import 'package:studio_app/pages/register_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
